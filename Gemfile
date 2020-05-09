@@ -60,3 +60,14 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+# devise道入
+gem 'devise'
+
+# twitterログイン機能実装用
+gem 'omniauth'
+gem 'omniauth-twitter'
+
+# envファイルで環境変数を管理する用
+gem 'dotenv-rails'
