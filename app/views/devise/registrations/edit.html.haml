@@ -1,39 +1,51 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :name
-    %br/
-    = f.text_field :name
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
-    = f.label :password
-    %i (変更したくない場合は空白)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
+.card.mx-auto.mt-5.text-center.card-devise-box
+  .card-header.bg-primary.text-white
+    プロフィールを変更
+  .card-body
+    %p.card-text 
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .field
+          = f.label :name
+          %br/
+          = f.text_field :name, class:"text-box"
+        
+        - if current_user.uid == nil
+          .field
+            = f.label :email
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email", class:"text-box"
+          - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+            %div
+              Currently waiting confirmation for: #{resource.unconfirmed_email}
+
+        - if current_user.uid == nil
+          .field
+            = f.label :password
+            - if @minimum_password_length
+              = "(#{@minimum_password_length}文字以上)"
+            %br/
+            = f.password_field :password, autocomplete: "new-password", class:"text-box"
+
+        - if current_user.uid == nil
+          .field
+            = f.label :password_confirmation
+            %br/
+            = f.password_field :password_confirmation, autocomplete: "new-password", class:"text-box"
+
+        -# - if current_user.uid == nil
+        -#   .field
+        -#     = f.label :current_password
+        -#     (必須)
+        -#     %br/
+        -#     = f.password_field :current_password, autocomplete: "current-password", class:"text-box"
+        %br/
+
+        .actions
+          = f.submit "更新する", class:"btn btn-primary"
+      - if current_user.uid == nil
+        %br/
+        #{button_to "退会する", registration_path(resource_name), data: { confirm: "本当に退会しますか?(ユーザーデータは全て削除されます)" }, method: :delete, class:"btn btn-primary"}
+
       %br/
-      %em
-        = @minimum_password_length
-        文字以上
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    %i (変更反映には入力必須です)
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
-  .actions
-    = f.submit "更新する"
-%p
-  #{button_to "キャンセル", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "前の画面へ戻る", :back
+      = link_to "前の画面へ戻る", :back
