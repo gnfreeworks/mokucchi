@@ -12,12 +12,16 @@
  *
  */
 
+
+
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-@import "tops_index.scss";
-@import "header.scss";
-@import "notifications.scss";
+@import 'header';
+@import 'notifications';
+
+@import 'tops_index';
+@import 'devise';

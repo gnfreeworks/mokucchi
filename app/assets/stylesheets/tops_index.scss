@@ -1,7 +1,7 @@
 // =============== 動画背景オーバーレイ ===============
 .wrap{
-  height: 100vh;
-  background: linear-gradient(-45deg, rgba(56, 56, 56, 0.4), rgba(48, 48, 48, 0.6));
+  height: calc(100vh - 62px);
+  background: linear-gradient(-45deg, rgba(56, 56, 56, 0.4), rgba(126, 126, 126, 0.6));
 }
 
 // =============== 背景用の動画ファイル ===============
@@ -19,8 +19,8 @@
 }
 // ============ 背景の上に表示させたいコンテンツ ============
 .header-title{
-  position: relative; /*必ず必要*/
-  z-index: 2; /*必ず必要*/
+  position: relative;
+  z-index: 2;
   display: flex;
   width: 50%;
   justify-content: center;
@@ -29,12 +29,12 @@
   margin: auto;
 }
 
-
-
-
+//========= toppage ===========//
 .jumbotron.register-box {
   background: rgba(255, 255, 255, 0.8);
   margin-top: 10rem;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .register-box-description {
@@ -42,6 +42,53 @@
   font-weight: bold;
 }
 
-.register-btn {
+
+
+//========= mainpage =========//
+.side-contents {
   width: 300px;
+  color: #FFFFFF;
+  float: left;
+}
+
+.side-contents .side-header {
+  background-color: #253141;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.side-header__box {
+  width: 100%;
+}
+
+.side-header__box__user-icon {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.side-header__box__user-icon img {
+  width: 100px;
+}
+
+.side-header__box__user-name {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+.side-header__box__menu__edit-user {
+  padding: 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.side-contents .side-menu {
+  height: calc(100vh - 200px - 62px);
+  background-color: #2f3e51;
+  padding: 20px;
+  overflow: auto;
 }
