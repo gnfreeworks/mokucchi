@@ -62,6 +62,16 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
+# デバッグツール
+gem 'pry-byebug'
+
+# jQuery道入
+gem 'jquery-rails'
+
+# Haml道入
+gem 'haml-rails'
+gem 'erb2haml'
+
 # devise道入
 gem 'devise'
 
