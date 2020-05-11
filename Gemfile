@@ -62,6 +62,16 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
+# デバッグツール
+gem 'pry-byebug'
+
+# jQuery道入
+gem 'jquery-rails'
+
+# Haml道入
+gem 'haml-rails'
+gem 'erb2haml'
+
 # devise道入
 gem 'devise'
 
@@ -71,3 +81,10 @@ gem 'omniauth-twitter'
 
 # envファイルで環境変数を管理する用
 gem 'dotenv-rails'
+
+# bootstrap道入
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
+
+# FontAwesome道入
+gem 'font-awesome-sass', '~> 5.4.1'
