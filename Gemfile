@@ -71,3 +71,10 @@ gem 'omniauth-twitter'
 
 # envファイルで環境変数を管理する用
 gem 'dotenv-rails'
+
+# bootstrap道入
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
+
+# FontAwesome道入
+gem 'font-awesome-sass', '~> 5.4.1'

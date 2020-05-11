@@ -1,0 +1,47 @@
+// =============== 動画背景オーバーレイ ===============
+.wrap{
+  height: calc(100vh - 62px);
+  background: linear-gradient(-45deg, rgba(56, 56, 56, 0.4), rgba(126, 126, 126, 0.6));
+}
+
+// =============== 背景用の動画ファイル ===============
+#bg-video{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  background: url('poster.jpg') no-repeat;
+  background-size: cover;
+}
+// ============ 背景の上に表示させたいコンテンツ ============
+.header-title{
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  margin: auto;
+}
+
+//========= toppage ===========//
+.jumbotron.register-box {
+  background: rgba(255, 255, 255, 0.8);
+  margin-top: 10rem;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.register-box-description {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+
+//========= mainpage =========//
