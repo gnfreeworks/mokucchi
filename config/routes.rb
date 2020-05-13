@@ -4,5 +4,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  root to: "tops#index"
+  root to: "posts#index"
+  resources :posts
 end

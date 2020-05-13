@@ -1,0 +1,22 @@
+.container-fuluid
+  .top-margin
+    = render partial: "layouts/side-contents"
+
+    .main-contents
+      .title-box
+        %h1.content-title もくもく会を主催する
+      = form_with model:@post, class: "post-form" do |f|
+        .form-group
+          = f.label :title, "タイトル"
+          = f.text_field :title, class:"form-control", placeholder: "タイトル"
+        .form-group
+          = f.label :access_url, "Zoom接続URLリンク"
+          = f.text_field :access_url, class:"form-control", placeholder: "例：https://us04web.zoom.us/j/◯◯◯◯?pwd=◯◯◯◯"
+        .form-group
+          = f.label :description, "説明欄"
+          = f.text_area :description, class:"form-control", placeholder: "もくもく会の内容・目的など", rows: "6"
+        = f.submit "作成する", class:"btn btn-primary" 
+
+        -# %li.show_delete_btn
+        -#   = link_to post_path(current_user.id), method: :delete, class: "show_delete-link" do
+        -#     削除

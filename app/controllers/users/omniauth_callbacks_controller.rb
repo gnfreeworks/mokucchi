@@ -4,6 +4,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   private
+  
   def callback_from(provider)
     provider = provider.to_s
 

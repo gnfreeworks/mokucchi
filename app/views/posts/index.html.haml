@@ -1,0 +1,31 @@
+- if user_signed_in?
+  .container-fuluid
+    = render partial: "layouts/side-contents"
+
+    .main-contents
+      .container.text-center
+        .title-box
+          %h1.content-title 開催中のもくもく会
+
+        .card-box.card-deck
+          - @posts.each do |post|
+            .row.card-margin
+              .card.postcard.border-primary
+                = image_tag "top_image.jpg", alt: "postcard-image", class: "postcard-img"
+                .card-body
+                  .card-title
+                    = post.title
+                  .card-text
+                    %a.modal-open{data: {target:"con#{post.id}"}}
+                      .btn.btn-primary 詳細
+                    .modal-content{id: "con#{post.id}"}
+                      = "#{post.title}"
+                      = "#{post.access_url}"
+                      = "#{post.description}"
+                      = "#{post.user_id}"
+                      
+                      %p
+                      %a.modal-close.btn.btn-primary.text-white 閉じる
+
+- else
+  = render partial: "toppage"

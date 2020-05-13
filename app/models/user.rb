@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
 
+  has_one :post
+  has_many :post_comments
+
+
   # TwitterAPIでアカウント情報を取得
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
