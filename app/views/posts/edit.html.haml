@@ -4,7 +4,7 @@
 
     .main-contents
       .title-box
-        %h1.content-title オンラインもくもく会を主催する
+        %h1.content-title もくもく会を主催する
       = form_with model:@post, class: "post-form" do |f|
         .form-group
           = f.label :title, "タイトル"
@@ -15,8 +15,8 @@
         .form-group
           = f.label :description, "説明欄"
           = f.text_area :description, class:"form-control", placeholder: "もくもく会の内容・目的など", rows: "6"
-        = f.submit "作成する", class:"btn btn-primary" 
-
+        = f.submit "更新する", class:"btn btn-primary" 
+        = link_to "削除する", post_path(@post.id) ,class:"btn btn-secondary", method: :delete
         -# %li.show_delete_btn
         -#   = link_to post_path(current_user.id), method: :delete, class: "show_delete-link" do
         -#     削除

@@ -16,8 +16,8 @@ $(document).on('turbolinks:load', function(){
       // モーダルコンテンツフェードイン
     $(modal).fadeIn('slow');
 
-    // 「.modal-overlay」あるいは「.modal-close」をクリック
-    $('.modal-overlay, .modal-close').off().click(function(){
+    // 「.modal-close」をクリック
+    $('.modal-close').off().click(function(){
       // モーダルコンテンツとオーバーレイをフェードアウト
       $(modal).fadeOut('slow');
       $('.modal-overlay').fadeOut('slow',function(){

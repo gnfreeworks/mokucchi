@@ -18,14 +18,8 @@
                   .card-text
                     %a.modal-open{data: {target:"con#{post.id}"}}
                       .btn.btn-primary 詳細
-                    .modal-content{id: "con#{post.id}"}
-                      = "#{post.title}"
-                      = "#{post.access_url}"
-                      = "#{post.description}"
-                      = "#{post.user_id}"
                       
-                      %p
-                      %a.modal-close.btn.btn-primary.text-white 閉じる
+                    = render partial: "show_modal",locals: { post: post }
 
 - else
   = render partial: "toppage"

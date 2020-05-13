@@ -1,10 +1,15 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: "DESC")
   end
 
   def new
-    @post = Post.new
+    if Post.find_by(user_id: current_user.id)
+      post = Post.find_by(user_id: current_user.id)
+      redirect_to edit_post_path(post.id)
+    else
+      @post = Post.new
+    end
   end
 
   def create
@@ -17,14 +22,19 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find_by(user_id: current_user.id)
+  end
+
   def show
     @post = Post.find(params[:id])
   end
   
   def destroy
-    # post = Post.find(params[:id])
-    # post.destroy
-    # redirect_to posts_path
+    post = Post.find(params[:id])
+    post.destroy
+    redirect_to posts_path, notice: 'もくもく会の投稿を削除しました.
+    '
   end
 
   private
