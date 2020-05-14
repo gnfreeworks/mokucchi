@@ -10,9 +10,9 @@
           = f.label :title, "タイトル"
           = f.text_field :title, class:"form-control", placeholder: "タイトル"
         .form-group
-          = f.label :access_url, "Zoom接続URLリンク"
+          = f.label :access_url, "接続URL(zoom, Whereby 等)"
           = f.text_field :access_url, class:"form-control", placeholder: "例：https://us04web.zoom.us/j/◯◯◯◯?pwd=◯◯◯◯"
         .form-group
           = f.label :description, "説明欄"
-          = f.text_area :description, class:"form-control", placeholder: "もくもく会の内容・目的など", rows: "6"
+          = f.text_area :description, class:"form-control", placeholder: "もくもく会の内容・目的など", rows: "8"
         = f.submit "作成する", class:"btn btn-primary" 

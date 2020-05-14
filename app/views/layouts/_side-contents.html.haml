@@ -13,10 +13,7 @@
         = current_user.name
       %br/
       %ul.side-header__box__menu__edit-user
-        = link_to "プロフィール変更", edit_user_registration_path, class:"side-header__box__menu__edit-user__edit"
+        = link_to "プロフィール変更", edit_user_registration_path, class:"side-header__box__menu__edit-user__edit btn btn-outline-info"
   .side-menu
-    = link_to "開催中のもくもく会を探す", posts_path
-    %br/
-    %br/
-    %br/
-    = link_to "もくもく会を主催する", new_post_path
+    = link_to "開催中のもくもく会を探す", posts_path, class:"side-menu__link btn btn-outline-warning"
+    = link_to "もくもく会を主催する", new_post_path, class:"side-menu__link btn btn-outline-warning"

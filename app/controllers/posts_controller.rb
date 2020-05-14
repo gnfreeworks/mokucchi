@@ -27,7 +27,6 @@ class PostsController < ApplicationController
   end
 
   def update
-    # binding.pry
     if Post.find_by(user_id: current_user.id).update(post_params)
       redirect_to root_path, notice: '投稿内容を更新しました。'
     else
