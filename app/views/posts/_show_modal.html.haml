@@ -1,8 +1,13 @@
 .modal-content{id: "con#{post.id}"}
-  = "#{post.title}"
-  = "#{post.access_url}"
-  = "#{post.description}"
-  = "#{post.user_id}"
-  
+  .modal-post-title
+    タイトル：
+    = "#{post.title}"
+  .modal-post-access_url
+    = "#{post.access_url}"
+  .modal-post-description
+    = "#{post.description}"
+  .modal-post-user
+    = "#{post.user_id}"
+
   %p
   %a.modal-close.btn.btn-primary.text-white 閉じる

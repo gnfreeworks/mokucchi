@@ -26,6 +26,15 @@ class PostsController < ApplicationController
     @post = Post.find_by(user_id: current_user.id)
   end
 
+  def update
+    # binding.pry
+    if Post.find_by(user_id: current_user.id).update(post_params)
+      redirect_to root_path, notice: '投稿内容を更新しました。'
+    else
+      flash.now[:alert] = '投稿内容を更新できませんでした。'
+    end
+  end
+
   def show
     @post = Post.find(params[:id])
   end
@@ -33,8 +42,7 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find(params[:id])
     post.destroy
-    redirect_to posts_path, notice: 'もくもく会の投稿を削除しました.
-    '
+    redirect_to posts_path, notice: 'もくもく会の投稿を削除しました.'
   end
 
   private
