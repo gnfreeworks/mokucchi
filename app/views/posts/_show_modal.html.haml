@@ -20,13 +20,13 @@
     .modal-post__title
       主催者
     .modal-post__content
-      - if current_user.uid != nil
-        %img{src: "#{current_user[:image]}"}
+      - if post.user.uid != nil
+        %img{src: "#{post.user.image}", class: "post-detail-image"}
       - else
-        - if current_user.image?
-          = image_tag current_user.image.to_s, class:"rounded-circle"
+        - if post.user.image?
+          = image_tag post.user.image.to_s, class:"post-detail-image"
         - else
-          = image_tag "men-icon.jpeg", class:"rounded-circle"
+          = image_tag "men-icon.jpeg", class:"post-detail-image"
       = "#{post.user.name}"
 
 

@@ -32,13 +32,6 @@
             = f.label :password_confirmation
             %br/
             = f.password_field :password_confirmation, autocomplete: "new-password", class:"text-box"
-
-        -# - if current_user.uid == nil
-        -#   .field
-        -#     = f.label :current_password
-        -#     (必須)
-        -#     %br/
-        -#     = f.password_field :current_password, autocomplete: "current-password", class:"text-box"
         %br/
 
         .actions
