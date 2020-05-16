@@ -83,7 +83,7 @@ gem 'omniauth-twitter'
 gem 'dotenv-rails'
 
 # bootstrap道入
-gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 
 # FontAwesome道入

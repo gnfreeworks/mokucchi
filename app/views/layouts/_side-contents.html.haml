@@ -1,0 +1,19 @@
+.side-contents
+  .side-header
+    .side-header__box
+      .side-header__box__user-icon
+        - if current_user.uid != nil
+          %img.rounded-circle{src: "#{current_user[:image]}"}
+        - else
+          - if current_user.image?
+            = image_tag current_user.image.to_s, class:"rounded-circle"
+          - else
+            = image_tag "men-icon.jpeg", class:"rounded-circle"
+      .side-header__box__user-name
+        = current_user.name
+      %br/
+      %ul.side-header__box__menu__edit-user
+        = link_to "プロフィール変更", edit_user_registration_path, class:"side-header__box__menu__edit-user__edit btn btn-outline-info"
+  .side-menu
+    = link_to "開催中のもくもく会を探す", posts_path, class:"side-menu__link btn btn-outline-warning"
+    = link_to "もくもく会を主催する", new_post_path, class:"side-menu__link btn btn-outline-warning"

@@ -1,0 +1,34 @@
+.modal-content{id: "con#{post.id}"}
+  .modal-title
+    = "もくもく会 の詳細"
+  .modal-post
+    .modal-post__title
+      タイトル
+    .modal-post__content
+      = "#{post.title}"
+  .modal-post
+    .modal-post__title
+      説明欄
+    .modal-post__content--scloll
+      = safe_join(post.description.split("\n"), tag(:br))
+  .modal-post
+    .modal-post__title
+      参加接続URL
+    .modal-post__content
+      = link_to "#{post.access_url}", "#{post.access_url}", target: :_blank
+  .modal-post
+    .modal-post__title
+      主催者
+    .modal-post__content
+      - if post.user.uid != nil
+        %img{src: "#{post.user.image}", class: "post-detail-image"}
+      - else
+        - if post.user.image?
+          = image_tag post.user.image.to_s, class:"post-detail-image"
+        - else
+          = image_tag "men-icon.jpeg", class:"post-detail-image"
+      = "#{post.user.name}"
+
+
+  %p
+  %a.modal-close.btn.btn-primary.text-white 閉じる
