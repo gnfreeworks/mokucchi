@@ -11,13 +11,16 @@
           - @posts.each do |post|
             .row.card-margin
               .card.postcard.border-primary
-                = image_tag "top_image.jpg", alt: "postcard-image", class: "postcard-img"
+                - if post.upload_image.url
+                  = image_tag post.upload_image.url, class: "postcard-img"
+                - else
+                  = image_tag "top_image.jpg", alt: "postcard-image", class: "postcard-img"
                 .card-content.card-body
                   .card-title
                     = post.title
                   .card-text
-                    %a.modal-open{data: {target:"con#{post.id}"}}
-                      .btn.btn-primary 詳細
+                    %a.modal-open{data: {target:"con#{post.id}", id:"#{post.id}"}}
+                      .post-details.btn.btn-primary 詳細
                       
                     = render partial: "show_modal",locals: { post: post }
 

@@ -22,8 +22,24 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find(params[:postId])
+    @comments = @post.post_comments.joins(:user).select("
+                  post_comments.id,
+                  post_comments.comment,
+                  post_comments.created_at,
+                  users.name
+                ").order(created_at: :asc)
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
   def edit
     @post = Post.find_by(user_id: current_user.id)
+    @upload_image = @post.upload_image
   end
 
   def update
@@ -34,10 +50,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def show
-    @post = Post.find(params[:id])
-  end
-  
   def destroy
     post = Post.find(params[:id])
     post.destroy
@@ -47,7 +59,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :access_url, :description).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :access_url, :description, :upload_image).merge(user_id: current_user.id)
   end
 end
 

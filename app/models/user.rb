@@ -1,11 +1,15 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  mount_uploader :upload_image, ImageUploader
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
 
-  has_one :post
-  has_many :post_comments
+  validates :name, :email, presence: true
+
+  has_one :post, dependent: :destroy
+  has_many :post_comments, dependent: :destroy
 
 
   # TwitterAPIでアカウント情報を取得
