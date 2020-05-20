@@ -1,0 +1,22 @@
+//===========プロフィール===========//
+.profile-prev-image {
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.712);
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.hidden_file_field {
+  display: none;
+}
+
+
+//==========投稿カード画像==========//
+.post-prev-image {
+  width: 254px;
+  height: 140px;
+  border: 1px solid rgba(0, 0, 0, 0.712);
+  border-radius: 10px;
+  object-fit: cover;
+}

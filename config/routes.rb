@@ -5,5 +5,10 @@ Rails.application.routes.draw do
   }
 
   root to: "posts#index"
-  resources :posts
+  resources :posts, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
+    resources :post_comments, only: [:create, :destroy]
+  end
+
+  get  "posts/:id/post_comments"  => "post_comments#create", defaults: { format: 'json' }
+
 end

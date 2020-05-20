@@ -2,13 +2,13 @@
   .side-header
     .side-header__box
       .side-header__box__user-icon
-        - if current_user.uid != nil
-          %img.rounded-circle{src: "#{current_user[:image]}"}
+        - if current_user.upload_image.url.present?
+          = image_tag current_user.upload_image.url, class: "rounded-circle"
         - else
-          - if current_user.image?
-            = image_tag current_user.image.to_s, class:"rounded-circle"
+          - if current_user.image.present?
+            = image_tag current_user.image, alt: "preview", class: "rounded-circle"
           - else
-            = image_tag "men-icon.jpeg", class:"rounded-circle"
+            = image_tag "men-icon.jpeg", class: "rounded-circle"
       .side-header__box__user-name
         = current_user.name
       %br/

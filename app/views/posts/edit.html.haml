@@ -6,6 +6,20 @@
       .title-box
         %h1.content-title もくもく会を主催する
       = form_with model:@post, class: "post-form" do |f|
+        .form-group.mb-0
+          = f.label :title, "イメージ画像（変更は画像をクリック）"
+          .image_form
+            .image_form__contents
+              = f.label :upload_image, class: 'image_label' do
+                .prev-contents
+                  - if @upload_image.url.present?
+                    .prev-content
+                      = image_tag @upload_image.url, class: "prev-image post-prev-image"
+                  - else
+                    .prev-content
+                      = image_tag "post_card_image.jpeg", class: "prev-image post-prev-image"
+                = f.file_field :upload_image, class: 'hidden_file_field'
+
         .form-group
           = f.label :title, "タイトル"
           = f.text_field :title, class:"form-control", placeholder: "タイトル"
@@ -14,6 +28,6 @@
           = f.text_field :access_url, class:"form-control", placeholder: "例：https://us04web.zoom.us/j/◯◯◯◯?pwd=◯◯◯◯"
         .form-group
           = f.label :description, "説明欄"
-          = f.text_area :description, class:"form-control", placeholder: "もくもく会の内容・目的など", rows: "8"
-        = f.submit "更新する", class:"btn btn-primary" 
+          = f.text_area :description, class:"form-control", placeholder: "もくもく会の内容・目的など", rows: "4"
+        = f.submit "更新する", class:"btn btn-primary", id:"edit-post"
         = link_to "削除する", post_path(@post.id) ,class:"btn btn-secondary", method: :delete

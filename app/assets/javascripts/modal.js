@@ -19,7 +19,6 @@ $(document).on('turbolinks:load', function(){
     $(modal).fadeIn('slow');
 
     // モーダル表示中の背景スクロールをロック
-    console.log(scrollPosition);
     scrollPosition = $(window).scrollTop();
     $('body').addClass('fixed').css({'top': -scrollPosition});
 
@@ -49,13 +48,12 @@ $(document).on('turbolinks:load', function(){
       // var y = (h - $(modal).outerHeight(true)) / 2;
 
       // モーダルコンテンツの表示位置を設定
-      $(modal).css({'left': x + 'px','top': 100 + 'px'});
+      $(modal).css({'left': x + 'px','top': 65 + 'px'});
     }
   });
 
   // モーダル閉じた後のスクロールロック解除
   $('.modal-content').on('click', function() {
-    console.log(scrollPosition);
     $('body').removeClass('fixed').css({'top': 0});
     window.scrollTo( 0 , scrollPosition );
   });

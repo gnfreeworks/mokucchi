@@ -88,3 +88,8 @@ gem 'jquery-rails'
 
 # FontAwesome道入
 gem 'font-awesome-sass', '~> 5.4.1'
+
+# carrierwave導入
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog-aws'

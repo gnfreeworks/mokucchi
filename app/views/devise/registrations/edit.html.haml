@@ -6,6 +6,24 @@
       = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
         = render "devise/shared/error_messages", resource: resource
         .field
+          .image_form
+            .image_form__contents
+              %p.mb-0 プロフィール画像
+              %p.small.mb-0 (変更は画像をクリック)
+              = f.label :upload_image, class: 'image_label' do
+                .prev-contents
+                  - if current_user.upload_image.url.present?
+                    .prev-content
+                      = image_tag current_user.upload_image.url, class: "prev-image profile-prev-image"
+                  - else
+                    .prev-content
+                      - if current_user.image.present?
+                        = image_tag current_user.image, alt: "preview", class: "prev-image profile-prev-image"
+                      - else
+                        = image_tag "men-icon.jpeg", class: "prev-image profile-prev-image"
+                = f.file_field :upload_image, class: 'hidden_file_field'
+
+        .field
           = f.label :name
           %br/
           = f.text_field :name, class:"text-box"
@@ -35,10 +53,9 @@
         %br/
 
         .actions
-          = f.submit "更新する", class:"btn btn-primary"
-      - if current_user.uid == nil
-        %br/
-        #{button_to "退会する", registration_path(resource_name), data: { confirm: "本当に退会しますか?(ユーザーデータは全て削除されます)" }, method: :delete, class:"btn btn-primary"}
+          = f.submit "更新する", class: "btn btn-primary mb-3", id: "edit-profile"
 
-      %br/
       = link_to "前の画面へ戻る", :back
+      %br/
+      %br/
+      = link_to "退会する", registration_path(resource_name), method: :delete, data: { confirm: "本当に退会しますか?(ユーザーデータは全て削除されます)" }

@@ -14,7 +14,7 @@
 .title-box {
   background-color: white;
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .content-title {
@@ -49,6 +49,8 @@
 
 .side-header__box__user-icon img {
   width: 100px;
+  height: 100px;
+  object-fit: cover;
 }
 
 .side-header__box__user-name {
@@ -85,11 +87,15 @@
   width: calc(100vw - 300px);
   margin-top: 100px;
   margin-left: 295px;
-  // height: calc(100vh - 62px);
-  // float: right;
-  // position: relative;
-  // background-color: #fafafa;
 }
+
+//======= もくもく会新規投稿画面 ========//
+textarea.description {
+  padding: 0 5px;
+  line-height: 11px;
+  margin: 3px 0;
+}
+
 
 //========= 投稿もくもく会カード ========//
 .card.postcard {
@@ -101,6 +107,7 @@
   width: 100%;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+  object-fit: cover;
 }
 
 .card-box.card-deck {
@@ -161,7 +168,7 @@ body.fixed {
   position:fixed;
   display:none;
   z-index:2;
-  width: 720px;
+  width: 850px;
   margin:0;
   padding:10px 20px;
   border:2px solid #aaa;
@@ -210,6 +217,7 @@ body.fixed {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-color: #017BFF;
   border-radius: 5px 5px;
+  font-size: 14px;
 }
 
 .modal-title {
@@ -234,7 +242,75 @@ body.fixed {
 .modal-post__content--scloll {
   text-align: left;
   width: 100%;
-  height: 320px;
+  height: 120px;
+  line-height: 13px;
+  margin: 3px 0;
   padding: 0 5px;
   overflow: scroll; 
+}
+
+.nonflex{
+  display: inline;
+  border: none;
+}
+
+.modal-post__comment__title {
+  background-color: rgb(211, 211, 211);
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-color: #017BFF;
+  width: 130px;
+}
+
+.modal-post__content__comment--scloll {
+  width: 100%;
+  height: 220px;
+  text-align: left;
+  overflow: scroll; 
+}
+
+ul#target-show-comment {
+  text-align: left;
+  font-size: 12px;
+  list-style: none;
+  padding: 0px;
+}
+
+li {
+  background-color: #d6eaff;
+}
+
+.comment-box {
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.comment-user {
+  width: 140px;
+  text-align: left;
+  line-height: 11px;
+  margin: 3px 0;
+  padding: 0 10px;
+  color: #d6641f;
+}
+
+.comment-sentence {
+  width: 510px;
+  padding: 0 5px;
+  line-height: 11px;
+  margin: 3px 0;
+}
+
+.comment-submit {
+  margin-top: 5px;
+}
+
+.input-comment {
+  width: 600px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  height: 60px;
+  line-height: 13px;
 }
