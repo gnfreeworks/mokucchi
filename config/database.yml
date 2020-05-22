@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: mokucchi_production
-  username: mokucchi
-  password: <%= ENV['MOKUCCHI_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
