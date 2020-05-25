@@ -26,13 +26,13 @@
         .field
           = f.label :name
           %br/
-          = f.text_field :name, class:"text-box"
+          = f.text_field :name, class:"text-box", placeholder: "ニックネーム（50文字以内）"
         
         - if current_user.uid == nil
           .field
             = f.label :email
             %br/
-            = f.email_field :email, autofocus: true, autocomplete: "email", class:"text-box"
+            = f.email_field :email, autofocus: true, autocomplete: "email", class:"text-box", placeholder: "メールアドレス"
           - if devise_mapping.confirmable? && resource.pending_reconfirmation?
             %div
               Currently waiting confirmation for: #{resource.unconfirmed_email}
@@ -40,17 +40,14 @@
         - if current_user.uid == nil
           .field
             = f.label :password
-            - if @minimum_password_length
-              = "(#{@minimum_password_length}文字以上)"
             %br/
-            = f.password_field :password, autocomplete: "new-password", class:"text-box"
+            = f.password_field :password, autocomplete: "new-password", class:"text-box", placeholder: "パスワード（#{@minimum_password_length}文字以上）"
 
         - if current_user.uid == nil
           .field
             = f.label :password_confirmation
             %br/
-            = f.password_field :password_confirmation, autocomplete: "new-password", class:"text-box"
-        %br/
+            = f.password_field :password_confirmation, autocomplete: "new-password", class:"text-box", placeholder: "パスワード(確認用)"
 
         .actions
           = f.submit "更新する", class: "btn btn-primary mb-3", id: "edit-profile"

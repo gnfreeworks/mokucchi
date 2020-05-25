@@ -7,3 +7,22 @@
 input.text-box {
   width: 300px;
 }
+
+.field {
+  margin-bottom: 15px;
+}
+
+
+
+// エラー表示
+#error_explanation h2 {
+  font-size: 1.3rem;
+  color: red;
+}
+
+#error_explanation ul {
+  padding-left: 0px;
+  list-style: none;
+  text-align: left;
+  color: red;
+}

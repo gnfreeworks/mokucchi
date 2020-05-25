@@ -53,7 +53,7 @@ $(function() {
         console.log("失敗しました");
       });
 
-      var id = setTimeout(reloadMessages, 4000);
+      var id = setTimeout(reloadMessages, 1000);
       console.log("id = " + id + " flag = " + flag);
       if(flag == false){
         clearTimeout(id);

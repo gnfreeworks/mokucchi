@@ -19,15 +19,17 @@
   .modal-post
     .modal-post__title
       主催者
-    .modal-post__content
-      - if post.user.uid != nil
-        %img{src: "#{post.user.image}", class: "post-detail-image"}
-      - else
-        - if post.user.image?
-          = image_tag post.user.image.to_s, class:"post-detail-image"
+    .modal-post__content.flex
+      .modal-post__content__organizer__image
+        - if post.user.uid != nil
+          %img{src: "#{post.user.image}", class: "post-detail-image"}
         - else
-          = image_tag "men-icon.jpeg", class:"post-detail-image"
-      = "#{post.user.name}"
+          - if post.user.image?
+            = image_tag post.user.image.to_s, class:"post-detail-image"
+          - else
+            = image_tag "men-icon.jpeg", class:"post-detail-image"
+      .modal-post__content__organizer__name
+        = "#{post.user.name}"
 
   .modal-post
     .modal-post__title
