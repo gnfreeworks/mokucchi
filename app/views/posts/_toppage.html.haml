@@ -19,6 +19,33 @@
             = link_to new_user_registration_path, class:"btn btn-secondary btn-block" do
               = icon('far','envelope')
               メールアドレスで始める
+          %br/
+          %br/
+
+          .row.account
+            .col-6
+              .account-view
+                = "ゲスト用Twitterアカウント"
+                %table
+                  %tr
+                    %td ID
+                    %td パスワード
+                  %tr
+                    %td sample-portfolio
+                    %td guestpass
+            .col-6
+              .account-view
+                = "ゲスト用メールアドレス"
+                %table
+                  %tr
+                    %td メールアドレス
+                    %td パスワード
+                  %tr
+                    %td sample@gmail.com
+                    %td password
+
+
+          
       .col-3
 
 
