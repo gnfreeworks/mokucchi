@@ -32,9 +32,7 @@
 //========= toppage ===========//
 .jumbotron.register-box {
   background: rgba(255, 255, 255, 0.8);
-  margin-top: 15rem;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-top: 12rem;
 }
 
 .register-box-description {
@@ -42,4 +40,20 @@
   font-weight: bold;
 }
 
+.row.account {
+  margin: auto;
+}
 
+.account-view {
+  font-weight: bold;
+  text-align: center;
+}
+
+.account-view table{
+  border: 1px black solid;
+  background-color: white;
+}
+.account-view td{
+  border: 1px black solid;
+  padding: 0 10px;
+}
