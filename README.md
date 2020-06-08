@@ -1,24 +1,65 @@
-# README
+# アプリ名
+## mokucchi
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリ概要
+オンラインもくもく会の募集をしたい人と参加をしたい人をマッチングするアプリです。
 
-Things you may want to cover:
+もくもく会を主催する場合は、「もくもく会を主催する」からもくもく会のタイトル、Zoom接続URL、もくもく会の目的の説明を記載することが出来ます。投稿カードに表示したい画像も好きに変更することができます。
 
-* Ruby version
+もくもく会へ参加する場合は、「開催中のもくもく会を探す」から参加したい投稿内容を確認し、参加接続URLクリックでZoomへアクセスしてもくもく会に参加します。
+事前に主催者へ質問がある場合には、コメント欄に投稿することでやり取りすることができます。
+気に入った主催者がいた場合は、お気に入りへ登録することができる機能もあります。（制作中）
 
-* System dependencies
+# 制作背景
+私が会社を退職後、コロナウィルスが流行して家に引きこもる事になった際にたまたまTwitterの投稿でオンラインもくもく会の存在を知りました。
 
-* Configuration
+定期的に開催されている現役のエンジニアの方とコンタクトを取り、実際に参加させて頂いた事がこのアプリ制作のきっかけです。
 
-* Database creation
+私自身もくもく会への参加は初めてでしたが、現役エンジニアの方に直接プログラミングの質問が出来たり、実際の現場の雰囲気を聞けたり、現場でも役立つ書籍を紹介頂いたりととても有意義な経験が出来ました。
 
-* Database initialization
+オンラインもくもく会の情報が集まるサイトがあると、もっと気軽に参加できたり、募集も幅広く出来るのではないかと思い、このアプリを作成しました。
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+# 本番環境
+> アプリURL
 
-* Deployment instructions
+http://18.179.70.2
 
-* ...
+>ゲスト用アカウント
+
+- Twitterログイン用  
+ユーザー名 : sample-portfolio  
+パスワード : guestpass
+
+- メールアドレスログイン用  
+メールアドレス : sample@gmail.com  
+パスワード : password
+
+
+# DEMO(gifで動画や写真を貼って、ビューのイメージを掴んでもらいます)
+> 工夫したポイント  
+- AWSにアプリをデプロイしています
+- TwitterAPI連携でTwitterアカウントログイン可能、アイコン画像を受け取り表示
+- プロフィールのアカウント名、アイコン画像の変更機能
+- もくもく会投稿のイメージ画像の表示・画像変更機能
+- 気に入った主催者をお気に入り追加機能（現在実装中）
+
+> 使用技術(開発環境)
+- 開発言語  
+Ruby 2.6.6  
+HTML  
+CSS (Sass)  
+JavaScript (jQuery)  
+
+- フレームワーク  
+Ruby on Rails 5.2.4.2  
+Bootstrap 4.4.1
+
+- デプロイ環境  
+Amazon Web Service ( EC2 , S3 )
+
+> 課題や今後実装したい機能
+- 
+
+# DB設計
+
