@@ -15,9 +15,9 @@ Post.create(title: "いつでもどうぞ＠24時間オンライン", descriptio
 Post.create(title: "自宅待機組もくもく会", description: "誰でも参加可能なオンラインもくもく会です。メンバーは５人まで募集しています！", access_url: "http://www.google.com", user_id: 6)
 
 # もくもく会投稿へのコメント
-PostComment.create(comment:"コメントです", user_id: 1, post_id: 1)
-PostComment.create(comment:"コメントです①", user_id: 2, post_id: 2)
-PostComment.create(comment:"コメントです②", user_id: 3, post_id: 3)
-PostComment.create(comment:"コメントです③", user_id: 4, post_id: 4)
-PostComment.create(comment:"コメントです④", user_id: 5, post_id: 5)
-PostComment.create(comment:"コメントです⑤", user_id: 6, post_id: 6)
+# PostComment.create(comment:"コメントです", user_id: 1, post_id: 1)
+# PostComment.create(comment:"コメントです①", user_id: 2, post_id: 2)
+# PostComment.create(comment:"コメントです②", user_id: 3, post_id: 3)
+# PostComment.create(comment:"コメントです③", user_id: 4, post_id: 4)
+# PostComment.create(comment:"コメントです④", user_id: 5, post_id: 5)
+# PostComment.create(comment:"コメントです⑤", user_id: 6, post_id: 6)
