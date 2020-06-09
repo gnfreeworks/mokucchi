@@ -48,8 +48,8 @@ http://18.179.70.2
 > 使用技術(開発環境)
 - 開発言語  
 Ruby 2.6.6  
-HTML  
-CSS (Sass)  
+HTML (Haml)  
+CSS (SCSS)  
 JavaScript (jQuery)  
 
 - フレームワーク  
@@ -57,10 +57,9 @@ Ruby on Rails 5.2.4.2
 Bootstrap 4.4.1
 
 - デプロイ環境  
-Amazon Web Service ( EC2 , S3 )
-
-- DB
+AWS(Amazon Web Service) - 使用サービス：EC2 , S3  
 MySQL 5.6.47 
+
 
 > 課題や今後実装したい機能
 - お気に入り機能（現在位制作中）
