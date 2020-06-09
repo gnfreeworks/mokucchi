@@ -64,6 +64,7 @@ MySQL 5.6.47
 > 課題や今後実装したい機能
 - お気に入り機能（現在位制作中）
 - 主催者の投稿にコメントが付いた場合の通知機能
+- レスポンシブに対応出来ていない部分の改善
 
 # DB設計
 ![mokucchi-db](https://user-images.githubusercontent.com/22991742/84039309-0b8e5d00-a9dc-11ea-97fc-c1b00e1915de.png)
