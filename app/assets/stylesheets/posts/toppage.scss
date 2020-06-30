@@ -57,8 +57,9 @@
   font-weight: bold;
 }
 
-.row.account {
+.account {
   margin: auto;
+  display: flex;
 }
 
 .account-view {
@@ -67,6 +68,7 @@
 }
 
 .account-view table{
+  margin: auto;
   border: 1px black solid;
   background-color: white;
 }
